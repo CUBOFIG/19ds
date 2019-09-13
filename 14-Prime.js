@@ -1,18 +1,26 @@
-
-let n = prompt(`dame un numero`)
-TexToNumber = parseInt(n,10)
-let ns = 0
-for (var primos = 1; primos <= 100; primos++) {
+const PRIMOS = (n) => {
     
+    let number = 2
+    let primoz = 1
 
-    if (primos % 2 == 0) {
-        
-        ns += 1
-        console.log(primos);
+    while (n > 0) {
+        primoz = 1
+        for ( let i = 2; i < number; i++) {
+            if (number % i === 0) {
+                
+                primoz = 0
 
-        if(ns === TexToNumber){
-            break;
+                break;
+            }
         }
 
+        if (primoz) {
+            console.log(number)
+            n--
+        }
+
+        number++
     }
-} 
+}
+
+console.log(PRIMOS(10))
