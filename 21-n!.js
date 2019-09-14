@@ -8,4 +8,4 @@ function factorial (n) {
     return total
 }   
 
-console.log(factorial(x))
+console.log(factorial(5))
