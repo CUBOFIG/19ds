@@ -1,18 +1,18 @@
 function gcd_two_numbers(x, y) {
-    if ((typeof x !== 'number') || (typeof y !== 'number')) 
-      return false;
+  if ((typeof x !== 'number') || (typeof y !== 'number')) 
+    return false;
 
-    x = Math.abs(x);
-    y = Math.abs(y);
+  x = Math.abs(x);
+  y = Math.abs(y);
 
-    while(y) {
-      var t = y;
-      y = x % y;
-      x = t;
-    }
-    return x;
+  while(y) {
+    var t = y;
+    y = x % y;
+    x = t;
   }
-  
-  console.log(gcd_two_numbers(x,y)); 
+  return x;
+}
 
-  //O(f(n))
+console.log(gcd_two_numbers(10,5)); 
+
+//O(f(n))
