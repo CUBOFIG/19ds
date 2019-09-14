@@ -19,7 +19,7 @@ function lcm_two_numbers(x, y) {
    return (!x || !y) ? 0 : Math.abs((x * y) / gcd_two_numbers(x, y));
  }
  
- console.log(lcm_two_numbers(x,y));
+ console.log(lcm_two_numbers(10,5));
 
 
  //O(f(n))
