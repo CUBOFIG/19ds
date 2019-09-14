@@ -1,4 +1,4 @@
-let x = prompt(`dame un numero`)
+let x = 2
 let xN = parseInt(x,10)
 let formul = Math.exp(x)
 
@@ -18,4 +18,4 @@ for(let i = 0; i <= 9;i++){
 
 }
 
-console.log(`formula ${formula}`) 
+console.log(`formula ${formula}`)  
