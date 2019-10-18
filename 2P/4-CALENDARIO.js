@@ -20,25 +20,25 @@ class Calendario{
     
         switch (num % 7) {
             case 0:
-                this.num = "Domingo";
+                this.num = 7;
                 break;
             case 1:
-                this.num = "Lunes";
+                this.num = 1;
                 break
             case 2:
-                this.num = "Martes";
+                this.num = 2;
                 break
             case 3:
-                this.num = "Miercoles";
+                this.num = 3;
                 break
             case 4:
-                this.num = "Jueves";
+                this.num = 4;
                 break;
             case 5:
-                this.num = "Viernes";
+                this.num = 5;
                 break;
             case 6:
-                this.num = "Sabado";
+                this.num = 6
                 break;
         }
         return this.num;
@@ -163,6 +163,5 @@ class Calendario{
     console.log(Heri.isleapYear(2019))
     console.log(Heri.friday13(2019))
     console.log(Heri.firstDay(2019))
-    console.log(Heri.printCalendar(4,2019));
+    console.log(Heri.printCalendar(12,2019));
 })()
-
