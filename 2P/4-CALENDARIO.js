@@ -2,7 +2,7 @@ class Calendario{
 
     todayPlus(dia, num) {
     
-        if (dia == 1 || dia == "lunes"           ) {
+        if (dia == 1 || dia == "lunes") {
             num = num+1;
         } else if (dia == 2 || dia == "martes"   ) {
             num = num + 2;
@@ -58,20 +58,111 @@ class Calendario{
     }
     return count;   
     }
-    
+
     firstDay(y){
         let x;
-        x = new Date(y, 0, 1);
+        x=(y+Math.floor((y-1)/4)-Math.floor((y-1)/100)+Math.floor((y-1)/400))%7;
         return x;
+        }
+    printCalendar(mes, anio) {
+            let dias = 0;
+            let cont = 1;
+            let inicioMes = 0;
+            let calendar = new Array(5);
+            for (let i = 0; i < 5; i++) {
+                calendar[i] = new Array(7);
+                for (let j = 0; j < 7; j++) {
+                    calendar[i][j] = 0;
+                }
+            }
+            let x = this.firstDay(anio);
+            if (this.isleapYear(anio)) {
+                if (mes == 2) {
+                    dias = 29;
+                    inicioMes = (x + 31) % 7;
+                }
+            } else {
+                switch (mes) {
+                    case 1:
+                        dias = 31;
+                        inicioMes = x;
+                        break;
+                    case 2:
+                        dias = 28;
+                        inicioMes = (x + 31) % 7;
+                        break;
+                    case 3:
+                        dias = 31;
+                        inicioMes = (x + 59) % 7;
+                        break;
+                    case 4:
+                        dias = 30;
+                        inicioMes = (x + 90) % 7;
+                        break;
+                    case 5:
+                        dias = 31;
+                        inicioMes = (x + 120) % 7;
+                        break;
+                    case 6:
+                        dias = 30;
+                        inicioMes = (x + 151) % 7;
+                        break;
+                    case 7:
+                        dias = 31;
+                        inicioMes = (x + 181) % 7;
+                        break;
+                    case 8:
+                        dias = 31;
+                        inicioMes = (x + 212) % 7;
+                        break;
+                    case 9:
+                        dias = 30;
+                        inicioMes = (x + 243) % 7;
+                        break;
+                    case 10:
+                        dias = 31;
+                        inicioMes = (x + 273) % 7;
+                        break;
+                    case 11:
+                        dias = 30; //
+                        inicioMes = (x + 304) % 7;
+                        break;
+                    case 12:
+                        dias = 31;
+                        inicioMes = (x + 334) % 7;
+                        break;
+                    default:
+                        dias = "Error"
+                        break;
+                }
+            }
+    
+            for (let i = 0; i < 5; i++) {
+                if (i == 0) {
+                    for (let j = inicioMes; j < 7; j++) {
+                        calendar[i][j] = cont;
+                        cont++
+                    }
+                } else {
+                    for (let j = 0; j < 7; j++) {
+                        if (cont <= dias) {
+                            calendar[i][j] = cont;
+                            cont++;
+                        }
+                    }
+                }
+    
+            }
+            return calendar;
+        }
     }
-}
 
 ( function useCALENDARIO() {
-    c1 = new Calendario
-    console.log(c1.todayPlus(2, 9))
-    console.log(c1.isleapYear(2019))
-    console.log(c1.friday13(2019))
-    console.log(c1.firstDay(2019))
+    Heri = new Calendario
+    console.log(Heri.todayPlus(2, 9))
+    console.log(Heri.isleapYear(2019))
+    console.log(Heri.friday13(2019))
+    console.log(Heri.firstDay(2019))
+    console.log(Heri.printCalendar(4,2019));
 })()
-
 
