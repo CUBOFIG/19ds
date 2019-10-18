@@ -43,7 +43,7 @@ class Fibonacci {
 
 (function usefibonacci(){
 
-f1 = new fibonacci(5);
+f1 = new Fibonacci(5);
 console.log(f1.getValue());
 console.log(f1.getSuccesion());
 console.log(f1.getCost());
