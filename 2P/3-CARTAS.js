@@ -72,10 +72,35 @@ class Card {
 
         return myCard
     }
-}  
+
+    onePair(){
+
+        function factorial(n) {
+            return n <= 1 ? 1 : n * factorial(n - 1);
+        }
+               
+        let primer= (factorial(13) / (factorial(13-1)*(factorial(1))));
+      
+        let seg= (factorial(4) / (factorial(4-2)*(factorial(2))))
+   
+        let tercer= (factorial(12) / (factorial(12-3)*(factorial(3))))
+     
+        let cuartoFir=(factorial(4) / (factorial(4-1)*(factorial(1))))
+        let cuatro= Math.pow(cuartoFir,3);
+
+        let num_posibles=(factorial(52) / (factorial(52-5)*(factorial(5))))
+        let operacion= primer*seg*tercer*cuatro;
+        let prob=operacion/num_posibles;
+       
+
+        return ((prob.toFixed(4))*100)+"%";
+    }
+}
+
 
 ( function useCard() {
     c1 = new Card
     console.log(c1.printCard(29))
     console.log(c1.printNumber(2,3))
+    console.log(c1.onePair())
 })()
