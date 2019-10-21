@@ -1,50 +1,65 @@
 class Factorial {
-  constructor(n) {
-    this.costo = 0
-    this.succession = []
-    this.table = []
+  constructor(nu) {
+      this.nu = nu;
   }
-  
-  getValue(num =this.num) { 
-    
-    function value(num){
-    return num<=1 ? 1:  num*value(num-1)
-    }
-    return value(num);
-  }
+  Value(nu= this.nu ) {
 
-  getCost(num=this.num) {
-       let cont=0;
-       function value(num){
-        if(num <=1){
-          cont++;
-          return num;
-        } else{
-          cont++;
-          return num*value(num-1);
-        }
-       }
-       value(num);
-       return cont;
-  }
-  
-  getSuccesion() {
-      for (let i = 1; i <= this.num; i++) {
-        console.log("Fibonacci de " + i + " es: " + this.getValue(i) + "\n");
+      function value(nu) {
+
+          if (nu <= 1) {
+
+             return 1;
+
+          } else {
+
+              return nu * value(nu - 1);
+          }
       }
-    }
-  
-    getTable() {
-      console.log("N - Cost - Value")
-      for (let i = 0; i <= this.num; i++) {
-        console.log('f(' + i + ') - ' + this.getCost(i) + ' - ' + this.getValue(i));
+      return value(nu);
+  }
+  Cost( nu = this.nu ) {
+
+      let cont = 0;
+
+      function value(nu) {
+
+          if (nu <= 1) {
+
+              cont++;
+          } else {
+
+              cont++;
+
+              return nu * value(nu - 1);
+          }
+      }
+      value(nu);
+
+      return cont;
+  }
+  Sucesion() {
+
+      let sucesion = [];
+
+      for (let i = 1; i <= this.nu; i++) {
+
+          sucesion.push(this.Value(i));
+      }
+      return sucesion;
+  }
+  Table() {
+
+      console.log("Num-Costo-Valor");
+
+      for (let i = 1; i <= this.nu; i++) {
+
+          console.log("X(" + i + ") - " + this.Cost(i) + " - " + this.Value(i));
       }
   }
 }
-( function usefactorial() {
-  c1 = new Factorial(5)
-  console.log(c1.getValue())
-  console.log(c1.getCost())
-  console.log(c1.getSuccesion())
-  console.log(c1.getTable())
-})()
+let HERRI = new Factorial(5);
+
+console.log(HERRI.Value());
+console.log(HERRI.Sucesion());
+console.log(HERRI.Cost());
+console.log(HERRI.Table());
