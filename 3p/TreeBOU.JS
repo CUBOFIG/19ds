@@ -1,3 +1,4 @@
+let c = console.log
 class Node {
     constructor(data) {
       this.data = data;
@@ -82,28 +83,28 @@ class Node {
     }
   }
 //--------------------------------------
-const papa = new Node(5);
-const child1 = new Node(2);
-const child2 = new Node(10);
-const child3 = new Node(7);
-const child4 = new Node(4);
+const padre = new Node(5);
+const hijo1 = new Node(2);
+const hijo2 = new Node(10);
+const hijo3 = new Node(7);
+const hijo4 = new Node(4);
 
-const tree = new TreeBOU(papa);
+const TREEP = new TreeBOU(padre);
 
-tree.insert(child1);
-tree.insert(child2);
-tree.insert(child3);
-tree.insert(child4);
+TREEP.insert(hijo1);
+TREEP.insert(hijo2);
+TREEP.insert(hijo3);
+TREEP.insert(hijo4);
 
 //--------------------------------------
 
-console.log('BTF');
-console.log(tree.bft());
+c('BTF');
+c(TREEP.bft());
 
-console.log('preOrden');
-tree.preOrder();
+c('preOrden');
+TREEP.preOrder();
 
-tree.remove(2);
+TREEP.remove(2);
 
-console.log('preOrden');
-tree.preOrder();
+c('preOrden');
+TREEP.preOrder();
