@@ -1,3 +1,5 @@
+let c = console.log
+
 class Graph {
     constructor(n) {
       this.rows = n;
@@ -82,6 +84,7 @@ class Graph {
     }
   
   }
+
   
   GRAFO = new Graph(4);
   
@@ -91,6 +94,6 @@ class Graph {
   GRAFO.addEdege(2, 1, true);
   GRAFO.addEdege(1, 0, true);
 
-console.log(GRAFO.printGraph());
-console.log(GRAFO.isComplete());
-console.log(GRAFO.isMultigraph());
+c(GRAFO.printGraph());
+c(`IS ${GRAFO.isComplete()}`);
+c(`IS ${GRAFO.isMultigraph()}`);
